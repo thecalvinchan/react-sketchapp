@@ -35,7 +35,8 @@
     "test:e2e": "skpm-test",
     "test:watch": "npm run test -- --watch",
     "test:e2e:watch": "npm run test:e2e -- --watch",
-    "watch": "npm run build:react -- --watch"
+    "watch": "npm run build:react -- --watch",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "airbnb-prop-types": "^2.10.0",
