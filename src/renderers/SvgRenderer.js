@@ -4,7 +4,6 @@ import type { SketchLayer, ViewStyle, LayoutInfo, TextStyle, TreeNode } from '..
 import { makeSvgLayer } from '../jsonUtils/hacksForJSONImpl';
 
 const snakeExceptions = [
-  'viewBox',
   'gradientUnits',
   'gradientTransform',
   'patternUnits',
@@ -20,7 +19,6 @@ function toSnakeCase(string: string) {
     return 'xlink:href';
   }
   if (snakeExceptions.indexOf(string) !== -1) {
-    console.warn(string);
     return string;
   }
   return string.replace(/([A-Z])/g, $1 => `-${$1.toLowerCase()}`);
@@ -28,7 +26,6 @@ function toSnakeCase(string: string) {
 
 function makeSvgString(el) {
   if (typeof el === 'string') {
-    console.warn(el);
     return el;
   }
   const { type, props, children } = el;
@@ -59,6 +56,7 @@ function makeSvgString(el) {
     string += `</${cleanedType}>\n`;
   }
 
+  console.warn(string);
   return string;
 }
 
