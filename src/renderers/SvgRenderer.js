@@ -28,6 +28,7 @@ function toSnakeCase(string: string) {
 
 function makeSvgString(el) {
   if (typeof el === 'string') {
+    console.log(el);
     return el;
   }
   const { type, props, children } = el;
