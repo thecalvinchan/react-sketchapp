@@ -309,7 +309,6 @@ export function makeSvgLayer(layout: LayoutInfo, name: string, svg: string) {
   const svgImporter = MSSVGImporter.svgImporter();
   svgImporter.prepareToImportFromData(svgData);
   const svgLayer = svgImporter.importAsLayer();
-  console.warn(svgLayer);
   svgLayer.name = name;
   svgLayer.rect = {
     origin: {
@@ -321,5 +320,7 @@ export function makeSvgLayer(layout: LayoutInfo, name: string, svg: string) {
       height: layout.height,
     },
   };
-  return encodeSketchJSON(svgLayer);
+  const sketchJson = encodeSketchJSON(svgLayer);
+  console.warn(sketchJson);
+  return sketchJson;
 }
