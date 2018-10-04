@@ -4,6 +4,7 @@ import type { SketchLayer, ViewStyle, LayoutInfo, TextStyle, TreeNode } from '..
 import { makeSvgLayer } from '../jsonUtils/hacksForJSONImpl';
 
 const snakeExceptions = [
+  'viewBox',
   'gradientUnits',
   'gradientTransform',
   'patternUnits',
