@@ -20,6 +20,7 @@ function toSnakeCase(string: string) {
     return 'xlink:href';
   }
   if (snakeExceptions.indexOf(string) !== -1) {
+    console.log(string);
     return string;
   }
   return string.replace(/([A-Z])/g, $1 => `-${$1.toLowerCase()}`);
