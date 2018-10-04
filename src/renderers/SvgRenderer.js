@@ -58,7 +58,6 @@ function makeSvgString(el) {
     string += `</${cleanedType}>\n`;
   }
 
-  console.warn(string);
   return string;
 }
 
@@ -84,6 +83,8 @@ export default class SvgRenderer extends ViewRenderer {
       props,
       children,
     });
+
+    console.warn(layout);
 
     const svgLayer = makeSvgLayer(layout, 'Shape', svgString);
 
